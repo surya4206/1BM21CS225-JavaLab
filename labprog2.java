@@ -6,6 +6,10 @@ class Student{
     void accept()
     {
         Scanner ss=new Scanner(System.in);
+	  System.out.println("Enter name:");
+	  name=ss.next();
+	  System.out.println("Enter usn:");
+	  usn=ss.next();
         System.out.println("Enter the credits of the course and the respective marks:");
         for(int i=0;i<10;i++)
         {
@@ -15,6 +19,7 @@ class Student{
     }
     void display()
     {
+	  System.out.println("Name:"+name+"\nUSN:"+usn);
         for(int i=0;i<10;i++)
         {
             System.out.println("\nCourse "+(i+1));
@@ -22,15 +27,21 @@ class Student{
             System.out.println("Marks:"+marks[i]);
         }
     }
-    int calculate()
+    double calculate()
     {
-        int sgpa,num=0,den=0;
+        int num=0,den=0;
+	  double sgpa;
         for(int i=0;i<10;i++)
         { 
-        num+=credits[i]*marks[i];
+	  if(marks[i]<40)
+	  num+=0;
+	  else if(marks[i]/10<10)
+        num+=credits[i]*(((int)marks[i]/10)+1);
+	  else if(marks[i]/10==10)
+	  num+=credits[i]*((int)marks[i]/10);
         den+=credits[i];
         }
-        sgpa=num/den;
+        sgpa=(double)num/den;
         return sgpa;
     }
 }
