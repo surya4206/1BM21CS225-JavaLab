@@ -1,48 +1,47 @@
 import java.util.Scanner;
-
-class idk{
-    String title; String author; int price; int num_pages;
-    idk()
-    {
-        title = new String(); 
-        author = new String();
-        Scanner ss = new Scanner(System.in);
-        System.out.println("Please enter the name of the book:\t");
-        title = ss.next(); 
-        System.out.println("Please enter the name of the author:\t");
-        author = ss.next();
-        System.out.println("What are its prices and number of pages respectively:\t");
-        price = ss.nextInt(); num_pages = ss.nextInt();
+class Books
+{
+	String title,author; 
+	int price,num_pages;
+	Books()
+	{
+		title = new String();
+		author = new String();
+		Scanner ss = new Scanner(System.in);
+		System.out.println("Enter the name of the book:");
+		title = ss.next();
+		System.out.println("Enter the name of the author:");
+		author = ss.next();
+		System.out.println("Enter the price:");
+		price = ss.nextInt();
+		System.out.println("Enter the total number of pages:");
+		num_pages = ss.nextInt();
     }
-    @Override
     public String toString() 
     {
-        return "Book Title:\t"+title +"\nWritten by:\t"+author +"\nCost:\t"+price +"\nPages:\t"+num_pages;
+        return "Book Title: "+title +"\nWritten by: "+author +"\nCost: "+price +"\nPages: "+num_pages;
     }
 }
-class Author
+class prog3
 {
-    public static void main(String args[])
-    {
-        int total;
-        System.out.println("How many books do you want to record: ");
-        try (Scanner two = new Scanner(System.in))
-        {
-            total = two.nextInt();
-        
-            idk one[] = new idk[total];
-            for(int i=0;i<total;i++)
-            {
-                one[i] = new idk();
-            }
-            System.out.println("Do you want to check the information recorded? 0 to exit.");
-            if(two.nextInt() != 0)
-            {
-                for(int i = 0; i<total;i++)
-                {
-                    System.out.println(one[i]);
-                }
-            }
-        }
-    }
+	public static void main(String args[])
+	{
+		int total;
+		System.out.println("Enter number of books to record: ");
+		try (Scanner ss = new Scanner(System.in))
+		{
+			total = ss.nextInt();
+			Books one[] = new Books[total];
+			for(int i=0;i<total;i++)
+			{
+				System.out.println("Book "+(i+1)+":");
+				one[i] = new Books();
+			}
+			for(int i = 0; i<total;i++)
+			{
+				System.out.println("Book "+(i+1)+":");
+				System.out.println(one[i]);
+			}
+		}
+	}
 }
