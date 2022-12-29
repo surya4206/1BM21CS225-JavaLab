@@ -27,7 +27,7 @@ class Current extends Account{
 	float dep,wit,penalty;
 	public void deposit()
 	{
-		System.out.println("Eneter Ammount to deposit") ;
+		System.out.println("Enter Amount to deposit") ;
 		dep=sc.nextFloat();
 		show();
 		price+=dep;
@@ -102,7 +102,7 @@ class labprog5{
 			while(co!=4)
 			{
 				System.out.println("1.Display\n2.Deposit\n3.Withdraw\n4.Exit");
-				System.out.println("Enter Your Coice");
+				System.out.println("Enter Your Choice");
 				int cho=sc.nextInt();
 				switch(cho)
 				{
@@ -123,8 +123,8 @@ class labprog5{
 			s1.get_info();
 			while(co!=5)
 			{
-				System.out.println("1.Display\n2.Deposit\n3.Withdraw\n4Intrest\n5.Exit");
-				System.out.println("Enter Your Coice");
+				System.out.println("1.Display\n2.Deposit\n3.Withdraw\n4.Interest\n5.Exit");
+				System.out.println("Enter Your Choice");
 				int cho=sc.nextInt();
 				switch(cho)
 				{
@@ -146,34 +146,3 @@ class labprog5{
 			System.out.println("Wrong choice!");
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
